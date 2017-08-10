@@ -26,7 +26,11 @@ html lang="en"
       .container
         h1 MailingList
         p
-          | Welcome to MailingList
+          | Welcome to MailingList.
+        p
+          | MailingList is running, and can be accessed through its
+          a href="https://github.com/0xFireball/MailingList#rest-api" REST API
+          | .
 
     // jQuery first, then Tether, then Bootstrap JS.
     script src="/js/vendor/jquery-3.1.1.slim.min.js"
