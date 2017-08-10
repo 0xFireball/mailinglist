@@ -1,0 +1,13 @@
+name: mailinglist
+version: 0.1.0
+
+authors:
+  - 0xFireball <0xFireball@outlook.com>
+
+targets:
+  mailinglist:
+    main: src/mailinglist.cr
+
+crystal: 0.23.1
+
+license: MIT
