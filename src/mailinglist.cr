@@ -1,5 +1,5 @@
 require "./mailinglist/*"
 
-module Mailinglist
-  # TODO Put your code here
+module MailingList
+  puts VERSION
 end
