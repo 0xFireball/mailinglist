@@ -1,11 +1,16 @@
+require "./config"
 require "./mailinglist/*"
 require "kemal"
 
-default_port = 5020
-port = ENV.has_key?("PORT") ? ENV.fetch("PORT").as?(Int32) : default_port
+# config file
+CONF_FILE = File.read("./mailinglist.config.json")
 
 module MailingList
   puts "MailingList - v#{VERSION}"
 
-  Kemal.run port
+  # configure
+  CONFIG = MailingListConfig.from_json(CONF_FILE)
+  LISTMGR = ListManager.new(CONFIG.database.host, CONFIG.database.port, "mailinglist")
+
+  Kemal.run CONFIG.server.port
 end

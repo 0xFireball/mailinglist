@@ -1,13 +1,15 @@
 require "redis"
+require "../config"
 
 module MailingList
   class ListManager
-    def initialize(redisPort : Int32, list : String)
-      @db = Redis.new("localhost", redisPort)
+    def initialize(host : String, port : Int32, list : String)
+      @db = Redis.new(host, port)
       @list = list
     end
 
     def add(val : String)
+      @db.lrem(@list, 0, val) # remove duplicates
       @db.lpush(@list, val)
     end
 
@@ -20,7 +22,4 @@ module MailingList
     end
 
   end
-
-  REDIS_PORT = 6379
-  LISTMGR = ListManager.new(REDIS_PORT, "mailinglist")
 end

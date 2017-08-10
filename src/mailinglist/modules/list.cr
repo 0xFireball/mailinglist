@@ -14,6 +14,16 @@ delete "/a/list/uns" do |env|
   puts "Unsubscribed #{email}"
 end
 
+before_get "/a/list/" do |env|
+  if env.request.headers.has_key?("Authorization") &&
+    MailingList::CONFIG.server.apiKeys.includes?(env.request.headers["Authorization"])
+    # ok
+  else
+    env.response.status_code = 401
+    # raise "Unauthorized"
+  end
+end
+
 get "/a/list/" do |env|
   # list all subscribed
   MailingList::LISTMGR.list()
