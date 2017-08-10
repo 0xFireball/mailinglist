@@ -11,6 +11,8 @@ targets:
 dependencies:
   kemal:
     github: kemalcr/kemal
+  slang:
+    github: jeromegn/slang
 
 crystal: 0.23.1
 
