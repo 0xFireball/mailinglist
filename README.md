@@ -10,6 +10,7 @@ Simple mailing list manager.
 ## Usage
 
 - Start the server: `crystal run --release ./src/mailinglist.cr`
+- If you navigate to `/ ` on the server, you will meet a nice page that will inform you that the server is running.
 
 ### Configuration
 
