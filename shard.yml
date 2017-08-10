@@ -8,6 +8,10 @@ targets:
   mailinglist:
     main: src/mailinglist.cr
 
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
 crystal: 0.23.1
 
 license: MIT
