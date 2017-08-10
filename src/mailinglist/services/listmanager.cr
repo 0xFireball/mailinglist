@@ -15,6 +15,10 @@ module MailingList
       @db.lrem(@list, 1, val)
     end
 
+    def list()
+      return @db.lrange(@list, 0, -1)
+    end
+
   end
 
   REDIS_PORT = 6379
