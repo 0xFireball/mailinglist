@@ -18,3 +18,5 @@ html lang="en"
         p
           | MailingList is running, and can be accessed through its
           a href="https://github.com/0xFireball/MailingList#rest-api" REST API.
+        a class="btn btn-default btn-light ripple" href="https://github.com/0xFireball/MailingList"
+          | Source Code
