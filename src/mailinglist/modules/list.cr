@@ -1,8 +1,14 @@
 require "../services/listmanager"
+require "../services/validate"
 
 post "/a/list/sub" do |env|
   # subscribe to list
   email = env.params.query["e"]
+  if !valid_email?(email)
+    puts "Invalid email given."
+    env.response.status_code = 400
+    "Invalid email"
+  end
   MailingList::LISTMGR.add(email)
   puts "Subscribed #{email}"
 end
